@@ -1,4 +1,4 @@
-# Correctly
+# Grammar Wand
 
 A web extension to correct or refine the grammar of your text.
 

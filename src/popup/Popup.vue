@@ -1,8 +1,9 @@
 <script setup lang="ts">
+import Browser from 'webextension-polyfill'
 import { storageDemo } from '~/logic/storage'
 
 function openOptionsPage() {
-  browser.runtime.openOptionsPage()
+  Browser.runtime.openOptionsPage()
 }
 </script>
 

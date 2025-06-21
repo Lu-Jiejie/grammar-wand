@@ -1,6 +1,6 @@
 {
-  "name": "vitesse-webext",
-  "displayName": "Vitesse WebExt",
+  "name": "grammar-wand",
+  "displayName": "Grammar Wand",
   "version": "0.0.1",
   "private": true,
   "packageManager": "pnpm@10.12.1",
