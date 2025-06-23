@@ -1,10 +1,13 @@
+import type OllamaDefault from 'ollama/dist/browser'
 import type { ProtocolWithReturn } from 'webext-bridge'
 
 declare module 'webext-bridge' {
   export interface ProtocolMap {
     // define message protocol types
     // see https://github.com/antfu/webext-bridge#type-safe-protocols
-    'tab-prev': { title: string | undefined }
-    'get-current-tab': ProtocolWithReturn<{ tabId: number }, { title?: string }>
+    'ollama:generate': ProtocolWithReturn<
+      Parameters<typeof OllamaDefault.generate>[0],
+      string | null
+    >
   }
 }

@@ -1,7 +1,7 @@
 import OllamaDefault, { Ollama } from 'ollama/dist/browser'
 import { describe, expect, it } from 'vitest'
 
-describe('ollama browser', () => {
+describe.skip('ollama browser', () => {
   it.skip('ollama list', async () => {
     try {
       const list = await OllamaDefault.list()
@@ -18,7 +18,7 @@ describe('ollama browser', () => {
     }
   })
 
-  it.skip('ollama grammar correct', async () => {
+  it('ollama grammar correct', async () => {
     const abortController = new AbortController()
     const ollama = new Ollama({
       fetch: (url, options) => {
@@ -45,10 +45,16 @@ describe('ollama browser', () => {
         6. Preserve contractions and abbreviations in the original text (e.g., "don't" should not become "do not", "I'm" should remain "I'm" not "I am"), unless the contraction itself is grammatically incorrect.
         `,
       })
-      expect(result.response).toMatchInlineSnapshot(`"I am the most tall girl in my class."`)
+      expect(result.response).toMatchInlineSnapshot(`"I am the tallest girl in my class."`)
     }
     catch (error) {
-      expect(JSON.stringify(error)).toMatchInlineSnapshot()
+      expect(JSON.stringify(error)).toMatchInlineSnapshot(`"{}"`)
     }
   })
 })
+
+// describe('diff',() => {
+//   it('diff sentences',() => {
+
+//   })
+// })

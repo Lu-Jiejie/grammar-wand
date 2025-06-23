@@ -30,6 +30,7 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "diff": "^8.0.2",
     "ollama": "^0.5.16"
   },
   "devDependencies": {
